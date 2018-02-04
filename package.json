@@ -5,12 +5,35 @@
     "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "babel-node index.js",
+    "build": "webpack"
   },
   "author": "Hamed Montazeri, hamed.mon@gmail.com",
   "license": "MIT",
   "repository": {
     "url": "git@github.com:hmontazeri/is-vegan.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "nodemon": "^1.14.11"
+  }
 }
