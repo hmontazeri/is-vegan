@@ -1,6 +1,4 @@
-import fs from 'fs';
-
-const blackList = JSON.parse(fs.readFileSync('src/util/nonvegan.json', 'utf8'));
+import blackList from '../util/nonvegan';
 
 /**
  * This functions takes the given ingredient
@@ -8,7 +6,7 @@ const blackList = JSON.parse(fs.readFileSync('src/util/nonvegan.json', 'utf8'));
  * @param {string} ingredientToCheck - the ingredient to check
  * @return <code>true</code> if ingredient is not on blacklist
  */
-export function isVeganIngredient(ingredientToCheck = '') {
+export function isVeganIngredient (ingredientToCheck = '') {
   // true is empty
   if (ingredientToCheck.length === 0) return true;
 
@@ -22,10 +20,10 @@ export function isVeganIngredient(ingredientToCheck = '') {
 /**
  * This functions takes a given list of ingredients
  * and checks them against the black list of ingredients
- * @param {string} ingredientsToCheck - the lit of ingredients to check
+ * @param {[string]} ingredientsToCheck - the lit of ingredients to check
  * @return <code>true</code> if ingredients are not on blacklist
  */
-export function isVeganIngredientList(ingredientsToCheck = []) {
+export function isVeganIngredientList (ingredientsToCheck = []) {
   // jump out if input is empty
   let ingredient = null;
   for (let index = 0; index < ingredientsToCheck.length; index++) {
