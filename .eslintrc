@@ -1,0 +1,10 @@
+{
+  "extends": "standard",
+  "plugins": ["async-await"],
+  "rules": {
+    "semi": [2, "always"],
+    "no-invalid-this": 2,
+    "async-await/space-after-async": 2,
+    "async-await/space-after-await": 2
+  }
+}

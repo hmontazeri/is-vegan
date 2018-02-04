@@ -1,0 +1,16 @@
+{
+  "name": "is-vegan",
+  "version": "1.0.0",
+  "description":
+    "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Hamed Montazeri, hamed.mon@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "url": "git@github.com:hmontazeri/is-vegan.git"
+  },
+  "dependencies": {}
+}
