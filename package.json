@@ -1,7 +1,8 @@
 {
   "name": "is-vegan",
-  "version": "1.0.3",
-  "description": "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
+  "version": "1.0.4",
+  "description":
+    "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
   "main": "dist/index.js",
   "scripts": {
     "start": "babel-node index.js",
