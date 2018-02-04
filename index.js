@@ -1,2 +1,5 @@
-import * as isVegan from './src/modules/IsVegan';
-export default isVegan;
+import {
+  isVeganIngredient,
+  isVeganIngredientList
+} from './src/modules/IsVegan';
+export { isVeganIngredient, isVeganIngredientList };

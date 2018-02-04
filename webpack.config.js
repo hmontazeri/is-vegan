@@ -1,11 +1,17 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const pkg = require('./package.json');
+
+let libraryName = pkg.name;
 
 module.exports = {
   entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
+    filename: 'index.js',
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
