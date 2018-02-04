@@ -1,5 +1,6 @@
 # is-vegan
-is-vegan helps you to find out which ingridiends are not vegan. It can answer that on 1 ingredient or on a list of ingredients. [How to use?](#Usage)
+
+is-vegan helps you to find out which ingridiends are not vegan. It can answer that on 1 ingredient or on a list of ingredients. [How to use?](#usage)
 
 ## Usage
 
@@ -8,5 +9,3 @@ is-vegan helps you to find out which ingridiends are not vegan. It can answer th
 or
 
 `npm install is-vegan --save`
-
-
