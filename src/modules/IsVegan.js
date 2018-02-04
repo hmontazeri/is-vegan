@@ -10,7 +10,7 @@ export function isVeganIngredient (ingredientToCheck = '') {
   // true is empty
   if (ingredientToCheck.length === 0) return true;
 
-  if (!blackList.includes(ingredientToCheck)) {
+  if (!blackList.includes(ingredientToCheck.trim().toLowerCase())) {
     return true;
   } else {
     return false;
