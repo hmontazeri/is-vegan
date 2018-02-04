@@ -1,7 +1,7 @@
 # is-vegan
 is-vegan helps you to find out which ingridiends are not vegan. It can answer that on 1 ingredient or on a list of ingredients. [How to use?](#Usage)
 
-## Vegan Sources
+## Sources
 We want to make sure that you understand how is-vegan is implemented. We analyzed as many good information websites for vegan / non-vegan ingredients as we found to get a very accurate list of ingredients. However, do not hesitate to send a pull request with an updated version of the list.
 
 Websites we parsed:
@@ -15,10 +15,15 @@ Websites we parsed:
 
 ## Usage
 
+
+### Add
+
 `yarn add is-vegan`
 
 or
 
 `npm install is-vegan --save`
 
+
+### example
 
