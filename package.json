@@ -10,6 +10,7 @@
   },
   "author": "Hamed Montazeri, hamed.mon@gmail.com",
   "license": "MIT",
+  "homepage": "https://github.com/hmontazeri/is-vegan",
   "repository": {
     "url": "git@github.com:hmontazeri/is-vegan.git"
   },
