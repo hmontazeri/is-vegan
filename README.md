@@ -45,3 +45,8 @@ isVegan.isVeganIngredient('milk'); // false
 isVegan.isVeganIngredientList(['aspic', 'albumin']); // false
 isVegan.isVeganIngredientList(['soy', 'cacao butter']); // true
 ```
+
+## TODO
+
+* add tests
+* extend list
