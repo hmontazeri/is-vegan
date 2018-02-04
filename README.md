@@ -31,10 +31,6 @@ const isVegan = require('is-vegan');
 
 // or
 
-import { isVeganIngredient, isVeganIngredientList } from 'is-vegan';
-
-// or
-
 import * as isVegan from 'is-vegan';
 
 // example for single ingredient
@@ -44,6 +40,19 @@ isVegan.isVeganIngredient('milk'); // false
 // example for list of ingredients
 isVegan.isVeganIngredientList(['aspic', 'albumin']); // false
 isVegan.isVeganIngredientList(['soy', 'cacao butter']); // true
+
+// or
+
+import { isVeganIngredient, isVeganIngredientList } from 'is-vegan';
+
+// example for single ingredient
+isVeganIngredient('soy'); // true
+isVeganIngredient('milk'); // false
+
+// example for list of ingredients
+isVeganIngredientList(['aspic', 'albumin']); // false
+isVeganIngredientList(['soy', 'cacao butter']); // true
+
 ```
 
 ## TODO
