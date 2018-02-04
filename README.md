@@ -1,6 +1,6 @@
 # is-vegan
 
-is-vegan helps you to find out which ingridiends are not vegan. It can answer that on 1 ingredient or on a list of ingredients. [How to use?](#Usage)
+Is-Vegan helps you to find out which food ingredients are vegan / non-vegan. It can answer that on 1 ingredient or on a list of ingredients. [How to use?](#usage). It uses the 600+ entries black list of non-vegan ingredients.
 
 ## Sources
 
@@ -59,3 +59,10 @@ isVeganIngredientList(['soy', 'cacao butter']); // true
 
 * add tests
 * extend list
+
+## Authors
+
+* Hamed Montazeri
+* Meike Rittmeier
+
+
