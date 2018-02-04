@@ -27,3 +27,24 @@ or
 
 ### example
 
+``` javascript
+const isVegan = require('isVegan');
+
+// or 
+
+import {isVeganIngredient, isVeganIngredientList} from 'isVegan'; 
+
+// or
+
+import * as isVegan from 'isVegan';
+
+// example for single ingredient 
+isVegan.isVeganIngredient('soy'); // true
+isVegan.isVeganIngredient('milk'); // false
+
+// example for list of ingredients
+isVegan.isVeganIngredientList(['aspic', 'albumin']); // false
+isVegan.isVeganIngredientList(['soy', 'cacao butter']); // true
+
+```
+
