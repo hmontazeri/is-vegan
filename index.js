@@ -1,2 +1,2 @@
-import * as isVegan from './modules/IsVegan';
+import * as isVegan from './src/modules/IsVegan';
 export default isVegan;

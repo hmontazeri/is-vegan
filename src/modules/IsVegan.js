@@ -1,17 +1,22 @@
+import fs from 'fs';
+
+const blackList = JSON.parse(fs.readFileSync('src/util/nonvegan.json', 'utf8'));
+
 /**
  * This functions takes the given ingredient
  * and checks it against the black list of ingredients
  * @param {string} ingredientToCheck - the ingredient to check
- * @
+ * @return <code>true</code> if ingredient is not on blacklist
  */
 export function isVeganIngredient(ingredientToCheck = '') {
-  // jump out if input is empty
+  // true is empty
   if (ingredientToCheck.length === 0) return true;
 
-  // lower case it to match black list
-  ingredientToCheck = ingredientToCheck.toLowerCase();
-
-  //TODO: load list and check it against it
+  if (!blackList.includes(ingredientToCheck)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -21,12 +26,12 @@ export function isVeganIngredient(ingredientToCheck = '') {
  */
 export function isVeganIngredientList(ingredientsToCheck = []) {
   // jump out if input is empty
-  if (ingredientsToCheck.length === 0) return true;
-
-  // lower cases all to match black list
-  ingredientsToCheck = ingredientsToCheck.map(ingredient =>
-    ingredient.toLowerCase()
-  );
-
-  //TODO: load list and check it against it
+  let ingredient = null;
+  for (let index = 0; index < ingredientsToCheck.length; index++) {
+    ingredient = ingredientsToCheck[index];
+    if (!isVeganIngredient(ingredient)) {
+      return false;
+    }
+  }
+  return true;
 }
