@@ -54,6 +54,73 @@ isVeganIngredient('milk'); // false
 // example for list of ingredients
 isVeganIngredientList(['aspic', 'albumin']); // false
 isVeganIngredientList(['soy', 'cacao butter']); // true
+
+// real world examples (Products searched on [USDA Food Composition Databases](https://ndb.nal.usda.gov/ndb/search/list))
+
+const isVegan = require('is-vegan');
+
+// MOSER ROTH, DARK CHOCOLATE
+isVegan.isVeganIngredientList([
+  'COCOA LIQUOR',
+  ' SUGAR',
+  ' COCOA BUTTER',
+  ' ALKALIZED REDUCED FAT COCOA POWDER',
+  ' SOY LECITHIN EMULSIFIER',
+  ' GROUND VANILLA'
+]); // returns true
+
+// MISSION PIZZA CO., THIN CRUST PIZZA, COMBINATION
+isVegan.isVeganIngredientList([
+  'WATER',
+  ' WHEAT FLOUR',
+  ' PASTEURIZED MILK',
+  ' PORK',
+  ' TOMATOES',
+  ' LIQUID & HYDROGENATED SOYBEAN OIL',
+  ' CONTAINS 2% OR LESS OF THE FOLLOWING: PALM OIL',
+  ' YEAST',
+  ' SALT',
+  ' MECHANICALLY SEPARATED CHICKEN',
+  ' CORN MEAL',
+  ' DEHYDRATED POTATOES',
+  ' SUGAR',
+  ' SPICES & SPICE EXTRACTIVES (INCLUDING PAPRIKA)',
+  ' BEEF',
+  ' CHEESE CULTURES',
+  ' WHEAT GLUTEN',
+  ' CULTURED WHEY',
+  ' WHEY',
+  ' ENZYMES',
+  ' SODIUM ASCORBATE',
+  ' VINEGAR',
+  ' NATURAL & ARTIFICIAL FLAVOR',
+  ' DEXTROSE',
+  ' LACTIC ACID STARTER CULTURE',
+  ' OLEORESIN OF PAPRIKA',
+  ' LECITHIN',
+  ' SODIUM NITRITE',
+  ' CORN STARCH',
+  ' MONOCALCIUM PHOSPHATE',
+  ' SODIUM ACID PYROPHOSPHATE',
+  ' SODIUM BICARBONATE',
+  ' PROCESSING AIDS',
+  ' CITRIC ACID',
+  ' BETA CAROTENE',
+  ' DIMETHYLPOLYSILOXANE',
+  ' SOY LECITHIN',
+  ' TBHQ',
+  ' ONION POWDER',
+  ' GRALIC POWDER',
+  ' BHA',
+  ' BHT',
+  ' SOYBEAN OIL (PROCESSING AID)',
+  ' ASCORBIC ACID',
+  ' FERROUS SULFATE',
+  ' FOLIC ACID',
+  ' NIACIN',
+  ' RIBOFLAVIN',
+  ' THIAMINE MONONITRATE'
+]); // returns false
 ```
 
 ## TODO
