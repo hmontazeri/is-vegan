@@ -22,13 +22,5 @@ export function isVeganIngredient (ingredientToCheck = '') {
  * @return <code>true</code> if ingredients are not on blacklist
  */
 export function isVeganIngredientList (ingredientsToCheck = []) {
-  // jump out if input is empty
-  let ingredient = null;
-  for (let index = 0; index < ingredientsToCheck.length; index++) {
-    ingredient = ingredientsToCheck[index];
-    if (!isVeganIngredient(ingredient)) {
-      return false;
-    }
-  }
-  return true;
+  return !ingredientsToCheck.some(ingredient => !isVeganIngredient(ingredient))
 }
