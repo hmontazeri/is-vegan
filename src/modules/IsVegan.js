@@ -9,12 +9,10 @@ import blackList from '../util/nonvegan';
 export function isVeganIngredient (ingredientToCheck = '') {
   // true is empty
   if (ingredientToCheck.length === 0) return true;
+  
+  const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase() ;
 
-  if (!blackList.includes(ingredientToCheck.trim().toLowerCase())) {
-    return true;
-  } else {
-    return false;
-  }
+  return !blackList.includes(formattedIngredientToCheck);
 }
 
 /**
