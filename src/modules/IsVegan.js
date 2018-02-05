@@ -1,4 +1,4 @@
-import blackList from '../util/nonvegan.json';
+import blacklist from '../util/nonvegan.json';
 
 /**
  * This functions takes the given ingredient
@@ -12,7 +12,7 @@ export function isVeganIngredient (ingredientToCheck = '') {
 
   const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase();
 
-  return !blackList.includes(formattedIngredientToCheck);
+  return !blacklist.includes(formattedIngredientToCheck);
 }
 
 /**
