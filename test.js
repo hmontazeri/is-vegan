@@ -1,6 +1,6 @@
 // TODO: use Mocha // Chai
 
-const isVegan = require('./src/modules/IsVegan');
+const isVegan = require('./dist');
 
 // example for single ingredient
 console.log(isVegan.isVeganIngredient('soy')); // true

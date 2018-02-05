@@ -1,5 +1,6 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const pkg = require('./package.json');
 
 let libraryName = pkg.name;
@@ -33,5 +34,6 @@ module.exports = {
   stats: {
     colors: true
   },
+  plugins: [new UglifyJsPlugin()],
   devtool: 'source-map'
 };

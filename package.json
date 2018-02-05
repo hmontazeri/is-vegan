@@ -1,9 +1,13 @@
 {
   "name": "is-vegan",
   "version": "1.0.83",
-  "description":
-    "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
-  "keywords": ["vegan", "food", "ingredient", "ingredients"],
+  "description": "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
+  "keywords": [
+    "vegan",
+    "food",
+    "ingredient",
+    "ingredients"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "start": "babel-node index.js",
@@ -39,6 +43,7 @@
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-standard": "3.0.1",
     "nodemon": "1.14.11",
+    "uglifyjs-webpack-plugin": "^1.1.8",
     "webpack": "3.10.0",
     "webpack-node-externals": "1.6.0"
   }
