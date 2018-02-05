@@ -1,5 +1,10 @@
 import {
   isVeganIngredient,
-  isVeganIngredientList
+  isVeganIngredientList,
+  containsNonVeganIngredients
 } from './src/modules/IsVegan';
-export { isVeganIngredient, isVeganIngredientList };
+export {
+  isVeganIngredient,
+  isVeganIngredientList,
+  containsNonVeganIngredients
+};

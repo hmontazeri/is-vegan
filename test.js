@@ -9,3 +9,7 @@ console.log(isVegan.isVeganIngredient('milk')); // false
 // example for list of ingredients
 console.log(isVegan.isVeganIngredientList(['aspic', 'albumin'])); // false
 console.log(isVegan.isVeganIngredientList(['soy', 'cacao butter'])); // true
+
+// example for list of ingredients
+console.log(isVegan.containsNonVeganIngredients(['aspic', 'albumin', 'soy'])); // ['aspic', 'albumin']
+console.log(isVegan.containsNonVeganIngredients(['soy', 'cacao butter'])); // []

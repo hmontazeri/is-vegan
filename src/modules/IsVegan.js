@@ -7,7 +7,7 @@ import blacklist from '../util/nonvegan.json';
  * @return <code>true</code> if ingredient is not on blacklist
  */
 export function isVeganIngredient (ingredientToCheck = '') {
-  // true is empty
+  // true if empty
   if (ingredientToCheck.length === 0) return true;
 
   const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase();
@@ -23,4 +23,16 @@ export function isVeganIngredient (ingredientToCheck = '') {
  */
 export function isVeganIngredientList (ingredientsToCheck = []) {
   return !ingredientsToCheck.some(ingredient => !isVeganIngredient(ingredient));
+}
+
+/**
+ * This functions takes a given list of ingredients
+ * and checks them against the black list of ingredients
+ * @param {[string]} ingredientsToCheck - the lit of ingredients to check
+ * @return Array of ingredients that are non vegan
+ */
+export function containsNonVeganIngredients (ingredientsToCheck = []) {
+  return ingredientsToCheck.filter(
+    ingredient => !isVeganIngredient(ingredient)
+  );
 }
