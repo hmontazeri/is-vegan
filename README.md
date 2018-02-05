@@ -54,9 +54,13 @@ isVeganIngredient('milk'); // false
 // example for list of ingredients
 isVeganIngredientList(['aspic', 'albumin']); // false
 isVeganIngredientList(['soy', 'cacao butter']); // true
+```
 
-// real world examples (Products searched on [USDA Food Composition Databases](https://ndb.nal.usda.gov/ndb/search/list))
+### real world example
 
+[Products searched on USDA Food Composition Databases](https://ndb.nal.usda.gov/ndb/search/list)
+
+```javascript
 const isVegan = require('is-vegan');
 
 // MOSER ROTH, DARK CHOCOLATE
