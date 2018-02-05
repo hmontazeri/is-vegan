@@ -9,12 +9,10 @@ import blackList from '../util/nonvegan';
 export function isVeganIngredient (ingredientToCheck = '') {
   // true is empty
   if (ingredientToCheck.length === 0) return true;
+  
+  const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase() ;
 
-  if (!blackList.includes(ingredientToCheck.trim().toLowerCase())) {
-    return true;
-  } else {
-    return false;
-  }
+  return !blackList.includes(formattedIngredientToCheck);
 }
 
 /**
@@ -24,13 +22,5 @@ export function isVeganIngredient (ingredientToCheck = '') {
  * @return <code>true</code> if ingredients are not on blacklist
  */
 export function isVeganIngredientList (ingredientsToCheck = []) {
-  // jump out if input is empty
-  let ingredient = null;
-  for (let index = 0; index < ingredientsToCheck.length; index++) {
-    ingredient = ingredientsToCheck[index];
-    if (!isVeganIngredient(ingredient)) {
-      return false;
-    }
-  }
-  return true;
+  return !ingredientsToCheck.some(ingredient => !isVeganIngredient(ingredient))
 }
