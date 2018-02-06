@@ -1,4 +1,5 @@
-import blacklist from '../util/nonvegan.json';
+import blacklistsource from '../util/nonvegan.json';
+var blacklist = blacklistsource.map(x => x.trim().toLowerCase());
 
 /**
  * This functions takes the given ingredient
