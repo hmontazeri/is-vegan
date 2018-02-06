@@ -6,7 +6,7 @@ Is-Vegan helps you to find out which food ingredients are vegan / non-vegan. It 
 
 ## Sources
 
-We want to make sure that you understand how is-vegan is implemented. We analyzed as many good information websites for vegan / non-vegan ingredients as we found to get a very accurate list of ingredients. However, feel free to send a pull request with an updated version of the list.
+We want to make sure that you understand how is-vegan is implemented. We analyzed as many good information websites for vegan / non-vegan ingredients as we found to get a very accurate list of ingredients. **However, feel free to send a pull request with an updated version of the list.**
 
 Websites we parsed:
 
