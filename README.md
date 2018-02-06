@@ -4,6 +4,17 @@ Is-Vegan helps you to find out which food ingredients are vegan / non-vegan. It 
 
 [How to use?](#usage)
 
+## Why?
+
+We are aware that 'veganism' and the definition of it can be a hot topic. We created the blacklist keeping in mind that veganism in dietary terms, it denotes the practice of dispensing with all products derived wholly or partly from animals.
+
+Our first step is the approach to help people understand, which products, and where applicable its ingredients, do not involve, or have involved, the use of any animal product, by-product or derivative. It is not driven about any vegan lifestyle choice or stereotype.
+We welcome and appreciate any help and concerence regarding the blacklist/canbevegan list.
+
+Currently we are unfortunatly not adressing any other forms of exploitation of, and cruelty to, animals for clothing, cosmetics or any other purpose.
+
+**Thank you all for your comments, we appreciate the discussion, as we grow and learn from your input.**
+
 ## Sources
 
 We want to make sure that you understand how is-vegan is implemented. We analyzed as many good information websites for vegan / non-vegan ingredients as we found to get a very accurate list of ingredients. **However, feel free to send a pull request with an updated version of the list.**
