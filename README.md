@@ -189,7 +189,7 @@ isVegan.containsNonVeganIngredients([
   'NIACIN',
   'RIBOFLAVIN',
   'THIAMINE MONONITRATE'
-]); // returns ['PASTEURIZED MILK', 'PORK', 'BEEF', 'WHEY']
+]); // returns ['MECHANICALLY SEPARATED CHICKEN','PASTEURIZED MILK', 'PORK', 'BEEF', 'WHEY']
 ```
 
 ## TODO
