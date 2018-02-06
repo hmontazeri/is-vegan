@@ -189,7 +189,7 @@ isVegan.containsNonVeganIngredients([
   'NIACIN',
   'RIBOFLAVIN',
   'THIAMINE MONONITRATE'
-]); // returns [ 'PORK', 'BEEF', 'WHEY']
+]); // returns ['PASTEURIZED MILK', 'PORK', 'BEEF', 'WHEY']
 ```
 
 ## TODO
