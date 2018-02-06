@@ -1,6 +1,6 @@
 # is-vegan
 
-Is-Vegan helps you to find out which food ingredients are vegan / non-vegan. It can answer that on 1 ingredient or on a list of ingredients. It uses the 600+ entries black list of non-vegan ingredients.
+Is-Vegan helps you to find out which food ingredients are vegan / non-vegan. It can answer that on 1 ingredient or on a list of ingredients. It uses the 850+ entries black list of non-vegan ingredients.
 
 [How to use?](#usage)
 
