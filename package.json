@@ -1,6 +1,6 @@
 {
   "name": "is-vegan",
-  "version": "1.0.95",
+  "version": "1.0.96",
   "description":
     "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
   "keywords": ["vegan", "food", "ingredient", "ingredients"],
@@ -25,7 +25,7 @@
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.1",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "22.1.0",
     "babel-loader": "7.1.2",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.6.1",
@@ -39,9 +39,9 @@
     "eslint-plugin-node": "5.2.1",
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-standard": "3.0.1",
-    "jest": "^22.1.4",
+    "jest": "22.1.4",
     "nodemon": "1.14.11",
-    "uglifyjs-webpack-plugin": "^1.1.8",
+    "uglifyjs-webpack-plugin": "1.1.8",
     "webpack": "3.10.0",
     "webpack-node-externals": "1.6.0"
   }
