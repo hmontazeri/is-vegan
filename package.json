@@ -9,10 +9,10 @@
     "start": "babel-node index.js",
     "init": "mkdir dist",
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean && npm run init",
+    "prebuild": "npm run clean && npm run init && npm run test",
     "build": "webpack",
     "prepublish": "npm run build",
-    "test": "babel-node test.js"
+    "test": "jest"
   },
   "author": "Hamed Montazeri, hamed.mon@gmail.com",
   "license": "MIT",
@@ -25,6 +25,7 @@
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.1",
+    "babel-jest": "^22.1.0",
     "babel-loader": "7.1.2",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.6.1",
@@ -38,6 +39,7 @@
     "eslint-plugin-node": "5.2.1",
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-standard": "3.0.1",
+    "jest": "^22.1.4",
     "nodemon": "1.14.11",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "webpack": "3.10.0",
