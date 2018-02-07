@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hmontazeri/is-vegan.svg?branch=master)](https://travis-ci.org/hmontazeri/is-vegan)
+
 # is-vegan
 
 Is-Vegan helps you to find out which food ingredients are vegan / non-vegan. It can answer that on 1 ingredient or on a list of ingredients. It uses the 850+ entries black list of non-vegan ingredients.
