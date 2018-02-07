@@ -8,7 +8,7 @@ install:
   - npm install
 
 script:
-  - npm build
+  - npm run build
 
 notifications:
   email: false
