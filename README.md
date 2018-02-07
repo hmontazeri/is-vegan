@@ -31,13 +31,13 @@ Websites we parsed:
 
 ### Add
 
-``` bash
+```bash
 yarn add is-vegan
 ```
 
 or
 
-``` bash
+```bash
 npm install is-vegan --save
 ```
 
@@ -205,6 +205,12 @@ isVegan.containsNonVeganIngredients([
   'RIBOFLAVIN',
   'THIAMINE MONONITRATE'
 ]); // returns ['MECHANICALLY SEPARATED CHICKEN','PASTEURIZED MILK', 'PORK', 'BEEF', 'WHEY']
+```
+
+## Test
+
+```bash
+yarn test
 ```
 
 ## TODO
