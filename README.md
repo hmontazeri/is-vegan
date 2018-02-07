@@ -31,11 +31,15 @@ Websites we parsed:
 
 ### Add
 
-`yarn add is-vegan`
+``` bash
+yarn add is-vegan
+```
 
 or
 
-`npm install is-vegan --save`
+``` bash
+npm install is-vegan --save
+```
 
 ### example
 
