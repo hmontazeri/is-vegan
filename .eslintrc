@@ -2,6 +2,9 @@
   "extends": "standard",
   "rules": {
     "semi": [2, "always"],
-    "no-invalid-this": 2,
+    "no-invalid-this": 2
+  },
+  "env": {
+    "jest": true
   }
 }
