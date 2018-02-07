@@ -103,7 +103,7 @@ isVegan.isVeganIngredientList([
 ]); // returns true
 ```
 
-Checkout [RunKit - is-vegan-playground for more examples](https://runkit.com/hmontazeri/is-vegan-playground)
+Checkout [RunKit "is-vegan-playground" for more examples](https://runkit.com/hmontazeri/is-vegan-playground)
 
 ## Test
 
