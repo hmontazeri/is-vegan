@@ -65,17 +65,11 @@ isVegan.containsNonVeganIngredients(['aspic', 'albumin', 'soy']); // ['aspic', '
 isVegan.containsNonVeganIngredients(['soy', 'cacao butter']); // []
 
 // example for list of ingredients wich contain flagged and non-vegan ingredients
-isVegan.checkIngredients([
-  'soy',
-  'cacao butter',
-  'pork',
-  'beef',
-  'calciumphosphate'
-]);
+isVegan.checkIngredients(['soy', 'cacao butter', 'pork', 'beef', 'glycine']);
 // returns
 // {
 //   nonvegan: ['pork', 'beef'],
-//   flagged: ['calciumphosphate']
+//   flagged: ['glycine']
 // }
 
 // or
@@ -83,12 +77,12 @@ isVegan.checkIngredients([
 import { checkIngredients } from 'is-vegan';
 
 // example for list of ingredients wich contain flagged and non-vegan ingredients
-checkIngredients(['soy', 'cacao butter', 'pork', 'beef', 'calciumphosphate']);
+checkIngredients(['soy', 'cacao butter', 'pork', 'beef', 'glycine']);
 
 // returns
 // {
 //   nonvegan: ['pork', 'beef'],
-//   flagged: ['calciumphosphate']
+//   flagged: ['glycine']
 // }
 ```
 
