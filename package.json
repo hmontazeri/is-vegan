@@ -1,17 +1,19 @@
 {
   "name": "is-vegan",
-  "version": "1.0.97",
+  "version": "1.1.0",
   "description":
     "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
   "keywords": ["vegan", "food", "ingredient", "ingredients"],
   "main": "dist/index.js",
   "scripts": {
     "start": "babel-node index.js",
+    "clean-modules": "rm -rf node_modules",
     "init": "mkdir dist",
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean && npm run init && npm run test",
+    "prebuild": "npm run clean && npm run init && npm run lint && npm run test",
     "build": "webpack",
     "prepublish": "npm run build",
+    "lint": "eslint src/**/*.js",
     "test": "jest"
   },
   "author": "Hamed Montazeri, hamed.mon@gmail.com",
