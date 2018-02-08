@@ -1,12 +1,10 @@
 import checkIngredients from '../src/modules/IngredientChecker';
 
 test('should contain flagged ingredients but NO non-vegan ingredients', () => {
-  expect(
-    checkIngredients(['biotin', 'calciumphosphate', 'soy', 'garlic'])
-  ).toEqual(
+  expect(checkIngredients(['biotin', 'glycine', 'soy', 'garlic'])).toEqual(
     expect.objectContaining({
       nonvegan: [],
-      flagged: ['biotin', 'calciumphosphate']
+      flagged: ['biotin', 'glycine']
     })
   );
 });
@@ -22,18 +20,11 @@ test('should NOT contain flagged ingredients but non-vegan ingredients', () => {
 
 test('should contain flagged and non-vegan ingredients', () => {
   expect(
-    checkIngredients([
-      'beef',
-      'pork',
-      'calciumphosphate',
-      'biotin',
-      'soy',
-      'garlic'
-    ])
+    checkIngredients(['beef', 'pork', 'glycine', 'biotin', 'soy', 'garlic'])
   ).toEqual(
     expect.objectContaining({
       nonvegan: ['beef', 'pork'],
-      flagged: ['calciumphosphate', 'biotin']
+      flagged: ['glycine', 'biotin']
     })
   );
 });

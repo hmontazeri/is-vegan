@@ -20,6 +20,6 @@ test('should NOT contain flagged ingredients', () => {
 
 test('should contain flagged ingredients', () => {
   expect(
-    canBeVegan.containsFlaggedIngredients(['biotin', 'calciumphosphate', 'soy'])
-  ).toEqual(expect.arrayContaining(['biotin', 'calciumphosphate']));
+    canBeVegan.containsFlaggedIngredients(['biotin', 'glycine', 'soy'])
+  ).toEqual(expect.arrayContaining(['biotin', 'glycine']));
 });
