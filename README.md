@@ -79,23 +79,15 @@ isVegan.checkIngredients([
 
 // or
 
-import {
-  isVeganIngredient,
-  isVeganIngredientList,
-  containsNonVeganIngredients
-} from 'is-vegan';
+import { checkIngredients } from 'is-vegan';
 
-// example for single ingredient
-isVeganIngredient('soy'); // true
-isVeganIngredient('milk'); // false
+checkIngredients(['soy', 'cacao butter', 'pork', 'beef', 'calciumphosphate']);
 
-// example for list of ingredients
-isVeganIngredientList(['aspic', 'albumin']); // false
-isVeganIngredientList(['soy', 'cacao butter']); // true
-
-// example for list of ingredients
-containsNonVeganIngredients(['aspic', 'albumin', 'soy']); // ['aspic', 'albumin']
-containsNonVeganIngredients(['soy', 'cacao butter']); // []
+// returns
+// {
+//   nonvegan: ['pork', 'beef'],
+//   flagged: ['calciumphosphate']
+// }
 ```
 
 ### real world example
