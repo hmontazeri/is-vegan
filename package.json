@@ -19,6 +19,7 @@
   "jest": {
     "verbose": true,
     "automock": false,
+    "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "collectCoverageFrom": ["src/**/*.{js}", "!**/node_modules/**"]
   },
