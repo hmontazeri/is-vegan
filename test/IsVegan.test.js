@@ -1,5 +1,9 @@
 import * as isVegan from '../src/modules/IsVegan';
 
+test('should be true for empty string', () => {
+  expect(isVegan.isVeganIngredient('')).toBe(true);
+});
+
 test('should be vegan ingredient', () => {
   expect(isVegan.isVeganIngredient('soy')).toBe(true);
 });

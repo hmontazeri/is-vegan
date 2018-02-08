@@ -16,6 +16,12 @@
     "lint": "eslint src/**/*.js",
     "test": "jest"
   },
+  "jest": {
+    "verbose": true,
+    "automock": false,
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.{js}", "!**/node_modules/**"]
+  },
   "author": "Hamed Montazeri, hamed.mon@gmail.com",
   "license": "MIT",
   "homepage": "https://github.com/hmontazeri/is-vegan",

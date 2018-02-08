@@ -1,5 +1,9 @@
 import * as canBeVegan from '../src/modules/CanBeVegan';
 
+test('should be true for empty string', () => {
+  expect(canBeVegan.isFlaggedIngredient('')).toBe(true);
+});
+
 test('should be flagged ingredient', () => {
   expect(canBeVegan.isFlaggedIngredient('biotin')).toBe(true);
 });

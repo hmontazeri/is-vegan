@@ -7,7 +7,7 @@ import { containsFlaggedIngredients } from './CanBeVegan';
  * @param {[string]} ingredientsToCheck - the lit of ingredients to check
  * @return {nonvegan: [], flagged:[]} with nonvegan and flagged ingredients
  */
-export default function checkIngredients (ingredientsToCheck = []) {
+export default function checkIngredients (ingredientsToCheck) {
   const filteredElements = {
     // check non vegan ingredient
     nonvegan: containsNonVeganIngredients(ingredientsToCheck),
