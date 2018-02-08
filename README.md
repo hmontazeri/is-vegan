@@ -64,6 +64,19 @@ isVegan.isVeganIngredientList(['soy', 'cacao butter']); // true
 isVegan.containsNonVeganIngredients(['aspic', 'albumin', 'soy']); // ['aspic', 'albumin']
 isVegan.containsNonVeganIngredients(['soy', 'cacao butter']); // []
 
+isVegan.checkIngredients([
+  'soy',
+  'cacao butter',
+  'pork',
+  'beef',
+  'calciumphosphate'
+]);
+// returns
+// {
+//   nonvegan: ['pork', 'beef'],
+//   flagged: ['calciumphosphate']
+// }
+
 // or
 
 import {
@@ -103,7 +116,7 @@ isVegan.isVeganIngredientList([
 ]); // returns true
 ```
 
-Checkout [RunKit "is-vegan-playground" for more examples](https://runkit.com/hmontazeri/is-vegan-playground)
+Checkout: [RunKit "is-vegan-playground" for more examples](https://runkit.com/hmontazeri/is-vegan-playground)
 
 ## Test
 
