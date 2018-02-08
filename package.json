@@ -7,11 +7,13 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "babel-node index.js",
+    "clean-modules": "rm -rf node_modules",
     "init": "mkdir dist",
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean && npm run init && npm run test",
+    "prebuild": "npm run clean && npm run init && npm run lint && npm run test",
     "build": "webpack",
     "prepublish": "npm run build",
+    "lint": "eslint src/**/*.js",
     "test": "jest"
   },
   "author": "Hamed Montazeri, hamed.mon@gmail.com",
