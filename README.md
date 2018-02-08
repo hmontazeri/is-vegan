@@ -64,7 +64,7 @@ isVegan.isVeganIngredientList(['soy', 'cacao butter']); // true
 isVegan.containsNonVeganIngredients(['aspic', 'albumin', 'soy']); // ['aspic', 'albumin']
 isVegan.containsNonVeganIngredients(['soy', 'cacao butter']); // []
 
-// !!!!ATTENTION: the flagged item list is not very complete at this moment. We are working on it.
+// example for list of ingredients wich contain flagged and non-vegan ingredients
 isVegan.checkIngredients([
   'soy',
   'cacao butter',
@@ -82,7 +82,7 @@ isVegan.checkIngredients([
 
 import { checkIngredients } from 'is-vegan';
 
-// !!!!ATTENTION: the flagged item list is not very complete at this moment. We are working on it.
+// example for list of ingredients wich contain flagged and non-vegan ingredients
 checkIngredients(['soy', 'cacao butter', 'pork', 'beef', 'calciumphosphate']);
 
 // returns
