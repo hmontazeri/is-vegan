@@ -1,4 +1,4 @@
-import * as canBeVegan from '../src/modules/canBeVegan';
+import * as canBeVegan from '../src/modules/CanBeVegan';
 
 test('should be flagged ingredient', () => {
   expect(canBeVegan.isFlaggedIngredient('biotin')).toBe(true);

@@ -1,4 +1,4 @@
-import checkIngredients from '../src/modules/ingredientChecker';
+import checkIngredients from '../src/modules/IngredientChecker';
 
 test('should contain flagged ingredients but NO non-vegan ingredients', () => {
   expect(
