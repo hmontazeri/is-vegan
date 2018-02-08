@@ -7,6 +7,7 @@ let libraryName = pkg.name;
 
 module.exports = {
   entry: './index.js',
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -34,6 +35,5 @@ module.exports = {
   stats: {
     colors: true
   },
-  plugins: [new UglifyJsPlugin()],
-  devtool: 'source-map'
+  plugins: [new UglifyJsPlugin({ sourceMap: true })]
 };

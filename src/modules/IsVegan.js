@@ -6,7 +6,7 @@ import blacklist from '../util/nonvegan.json';
  * @param {string} ingredientToCheck - the ingredient to check
  * @return <code>true</code> if ingredient is not on blacklist
  */
-export function isVeganIngredient (ingredientToCheck = '') {
+export function isVeganIngredient (ingredientToCheck) {
   // true if empty
   if (ingredientToCheck.length === 0) return true;
 
@@ -21,7 +21,7 @@ export function isVeganIngredient (ingredientToCheck = '') {
  * @param {[string]} ingredientsToCheck - the lit of ingredients to check
  * @return <code>true</code> if ingredients are not on blacklist
  */
-export function isVeganIngredientList (ingredientsToCheck = []) {
+export function isVeganIngredientList (ingredientsToCheck) {
   return !ingredientsToCheck.some(ingredient => !isVeganIngredient(ingredient));
 }
 
@@ -31,7 +31,7 @@ export function isVeganIngredientList (ingredientsToCheck = []) {
  * @param {[string]} ingredientsToCheck - the lit of ingredients to check
  * @return Array of ingredients that are non vegan
  */
-export function containsNonVeganIngredients (ingredientsToCheck = []) {
+export function containsNonVeganIngredients (ingredientsToCheck) {
   return ingredientsToCheck.filter(
     ingredient => !isVeganIngredient(ingredient)
   );

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hmontazeri/is-vegan.svg?branch=master)](https://travis-ci.org/hmontazeri/is-vegan) [![npm version](https://badge.fury.io/js/is-vegan.svg)](https://badge.fury.io/js/is-vegan) [![codecov](https://codecov.io/gh/hmontazeri/is-vegan/branch/master/graph/badge.svg)](https://codecov.io/gh/hmontazeri/is-vegan) [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/is-vegan/Lobby) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 # is-vegan
 
 Is-Vegan helps you to find out which food ingredients are vegan / non-vegan. It can answer that on 1 ingredient or on a list of ingredients. It uses the 850+ entries black list of non-vegan ingredients.
@@ -31,11 +33,15 @@ Websites we parsed:
 
 ### Add
 
-`yarn add is-vegan`
+```bash
+yarn add is-vegan
+```
 
 or
 
-`npm install is-vegan --save`
+```bash
+npm install is-vegan --save
+```
 
 ### example
 
@@ -58,25 +64,32 @@ isVegan.isVeganIngredientList(['soy', 'cacao butter']); // true
 isVegan.containsNonVeganIngredients(['aspic', 'albumin', 'soy']); // ['aspic', 'albumin']
 isVegan.containsNonVeganIngredients(['soy', 'cacao butter']); // []
 
+// !!!!ATTENTION: the flagged item list is not very complete at this moment. We are working on it.
+isVegan.checkIngredients([
+  'soy',
+  'cacao butter',
+  'pork',
+  'beef',
+  'calciumphosphate'
+]);
+// returns
+// {
+//   nonvegan: ['pork', 'beef'],
+//   flagged: ['calciumphosphate']
+// }
+
 // or
 
-import {
-  isVeganIngredient,
-  isVeganIngredientList,
-  containsNonVeganIngredients
-} from 'is-vegan';
+import { checkIngredients } from 'is-vegan';
 
-// example for single ingredient
-isVeganIngredient('soy'); // true
-isVeganIngredient('milk'); // false
+// !!!!ATTENTION: the flagged item list is not very complete at this moment. We are working on it.
+checkIngredients(['soy', 'cacao butter', 'pork', 'beef', 'calciumphosphate']);
 
-// example for list of ingredients
-isVeganIngredientList(['aspic', 'albumin']); // false
-isVeganIngredientList(['soy', 'cacao butter']); // true
-
-// example for list of ingredients
-containsNonVeganIngredients(['aspic', 'albumin', 'soy']); // ['aspic', 'albumin']
-containsNonVeganIngredients(['soy', 'cacao butter']); // []
+// returns
+// {
+//   nonvegan: ['pork', 'beef'],
+//   flagged: ['calciumphosphate']
+// }
 ```
 
 ### real world example
@@ -95,112 +108,14 @@ isVegan.isVeganIngredientList([
   'SOY LECITHIN EMULSIFIER',
   'GROUND VANILLA'
 ]); // returns true
+```
 
-// MISSION PIZZA CO., THIN CRUST PIZZA, COMBINATION
-isVegan.isVeganIngredientList([
-  'WATER',
-  'WHEAT FLOUR',
-  'PASTEURIZED MILK',
-  'PORK',
-  'TOMATOES',
-  'LIQUID & HYDROGENATED SOYBEAN OIL',
-  'CONTAINS 2% OR LESS OF THE FOLLOWING: PALM OIL',
-  'YEAST',
-  'SALT',
-  'MECHANICALLY SEPARATED CHICKEN',
-  'CORN MEAL',
-  'DEHYDRATED POTATOES',
-  'SUGAR',
-  'SPICES & SPICE EXTRACTIVES (INCLUDING PAPRIKA)',
-  'BEEF',
-  'CHEESE CULTURES',
-  'WHEAT GLUTEN',
-  'CULTURED WHEY',
-  'WHEY',
-  'ENZYMES',
-  'SODIUM ASCORBATE',
-  'VINEGAR',
-  'NATURAL & ARTIFICIAL FLAVOR',
-  'DEXTROSE',
-  'LACTIC ACID STARTER CULTURE',
-  'OLEORESIN OF PAPRIKA',
-  'LECITHIN',
-  'SODIUM NITRITE',
-  'CORN STARCH',
-  'MONOCALCIUM PHOSPHATE',
-  'SODIUM ACID PYROPHOSPHATE',
-  'SODIUM BICARBONATE',
-  'PROCESSING AIDS',
-  'CITRIC ACID',
-  'BETA CAROTENE',
-  'DIMETHYLPOLYSILOXANE',
-  'SOY LECITHIN',
-  'TBHQ',
-  'ONION POWDER',
-  'GRALIC POWDER',
-  'BHA',
-  'BHT',
-  'SOYBEAN OIL (PROCESSING AID)',
-  'ASCORBIC ACID',
-  'FERROUS SULFATE',
-  'FOLIC ACID',
-  'NIACIN',
-  'RIBOFLAVIN',
-  'THIAMINE MONONITRATE'
-]); // returns false
+Checkout: [RunKit "is-vegan-playground" for more examples](https://runkit.com/hmontazeri/is-vegan-playground)
 
-// MISSION PIZZA CO., THIN CRUST PIZZA, COMBINATION
-isVegan.containsNonVeganIngredients([
-  'WATER',
-  'WHEAT FLOUR',
-  'PASTEURIZED MILK',
-  'PORK',
-  'TOMATOES',
-  'LIQUID & HYDROGENATED SOYBEAN OIL',
-  'CONTAINS 2% OR LESS OF THE FOLLOWING: PALM OIL',
-  'YEAST',
-  'SALT',
-  'MECHANICALLY SEPARATED CHICKEN',
-  'CORN MEAL',
-  'DEHYDRATED POTATOES',
-  'SUGAR',
-  'SPICES & SPICE EXTRACTIVES (INCLUDING PAPRIKA)',
-  'BEEF',
-  'CHEESE CULTURES',
-  'WHEAT GLUTEN',
-  'CULTURED WHEY',
-  'WHEY',
-  'ENZYMES',
-  'SODIUM ASCORBATE',
-  'VINEGAR',
-  'NATURAL & ARTIFICIAL FLAVOR',
-  'DEXTROSE',
-  'LACTIC ACID STARTER CULTURE',
-  'OLEORESIN OF PAPRIKA',
-  'LECITHIN',
-  'SODIUM NITRITE',
-  'CORN STARCH',
-  'MONOCALCIUM PHOSPHATE',
-  'SODIUM ACID PYROPHOSPHATE',
-  'SODIUM BICARBONATE',
-  'PROCESSING AIDS',
-  'CITRIC ACID',
-  'BETA CAROTENE',
-  'DIMETHYLPOLYSILOXANE',
-  'SOY LECITHIN',
-  'TBHQ',
-  'ONION POWDER',
-  'GRALIC POWDER',
-  'BHA',
-  'BHT',
-  'SOYBEAN OIL (PROCESSING AID)',
-  'ASCORBIC ACID',
-  'FERROUS SULFATE',
-  'FOLIC ACID',
-  'NIACIN',
-  'RIBOFLAVIN',
-  'THIAMINE MONONITRATE'
-]); // returns ['MECHANICALLY SEPARATED CHICKEN','PASTEURIZED MILK', 'PORK', 'BEEF', 'WHEY']
+## Test
+
+```bash
+yarn test
 ```
 
 ## TODO
