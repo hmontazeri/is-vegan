@@ -1,10 +1,10 @@
-import blacklist from '../util/nonvegan.json';
+import nonVeganList from '../util/nonvegan.json';
 
 /**
  * This functions takes the given ingredient
  * and checks it against the black list of ingredients
  * @param {string} ingredientToCheck - the ingredient to check
- * @return <code>true</code> if ingredient is not on blacklist
+ * @return <code>true</code> if ingredient is not on nonVeganList
  */
 export function isVeganIngredient (ingredientToCheck) {
   // true if empty
@@ -12,14 +12,14 @@ export function isVeganIngredient (ingredientToCheck) {
 
   const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase();
 
-  return !blacklist.includes(formattedIngredientToCheck);
+  return !nonVeganList.includes(formattedIngredientToCheck);
 }
 
 /**
  * This functions takes a given list of ingredients
  * and checks them against the black list of ingredients
  * @param {[string]} ingredientsToCheck - the lit of ingredients to check
- * @return <code>true</code> if ingredients are not on blacklist
+ * @return <code>true</code> if ingredients are not on nonVeganList
  */
 export function isVeganIngredientList (ingredientsToCheck) {
   return !ingredientsToCheck.some(ingredient => !isVeganIngredient(ingredient));
