@@ -114,7 +114,6 @@ yarn test
 
 ## TODO
 
-* add tests
 * extend list
 
 ## Authors
