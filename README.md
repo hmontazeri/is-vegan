@@ -112,6 +112,10 @@ Checkout: [RunKit "is-vegan-playground" for more examples](https://runkit.com/hm
 yarn test
 ```
 
+## Alfred Workflow by Kyle Brumm (kjbrum)
+
+[alfred-is-vegan](https://github.com/kjbrum/alfred-is-vegan)
+
 ## TODO
 
 * extend list
