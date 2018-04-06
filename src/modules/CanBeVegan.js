@@ -2,9 +2,9 @@ import flaggedList from '../util/canbevegan.json';
 
 /**
  * This functions takes the given ingredient
- * and checks it against the flagged list of ingredients
+ * and checks it against the can-be-vegan list of ingredients
  * @param {string} ingredientToCheck - the ingredient to check
- * @return <code>true</code> if ingredient is on flaggedList
+ * @return <code>true</code> if ingredient is on can-be-vegan list
  */
 export function isFlaggedIngredient (ingredientToCheck) {
   // true if empty
@@ -17,9 +17,9 @@ export function isFlaggedIngredient (ingredientToCheck) {
 
 /**
  * This functions takes a given list of ingredients
- * and checks them against the flagged list of ingredients
- * @param {[string]} ingredientsToCheck - the lit of ingredients to check
- * @return Array of ingredients that are considered as flagged
+ * and checks them against the can-be-veagn list of ingredients
+ * @param {[string]} ingredientsToCheck - the list of ingredients to check
+ * @return Array of ingredients that are considered as flagged / can-be-vegan
  */
 export function containsFlaggedIngredients (ingredientsToCheck) {
   return ingredientsToCheck.filter(ingredient =>
