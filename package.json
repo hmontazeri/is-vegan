@@ -18,6 +18,7 @@
   },
   "jest": {
     "verbose": true,
+    "testURL": "http://localhost/",
     "automock": false,
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
