@@ -1,8 +1,9 @@
 {
   "name": "is-vegan",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Is-Vegan is a library which helps you to find out which ingridiends are not vegan",
   "keywords": [
+    "is-vegan",
     "vegan",
     "food",
     "ingredient",
