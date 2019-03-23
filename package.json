@@ -22,6 +22,7 @@
     "test": "jest"
   },
   "jest": {
+    "testURL": "http://localhost/",
     "verbose": true,
     "testURL": "http://localhost/",
     "automock": false,
