@@ -25,9 +25,9 @@ We want to make sure that you understand how is-vegan is implemented. We analyze
 
 Websites we parsed:
 
-* [veganpeace](http://www.veganpeace.com/ingredients/ingredients.htm)
-* [peta](https://www.peta.org/living/food/animal-ingredients-list/)
-* [veganwolf](http://www.veganwolf.com/animal_ingredients.htm)
+- [veganpeace](http://www.veganpeace.com/ingredients/ingredients.htm)
+- [peta](https://www.peta.org/living/food/animal-ingredients-list/)
+- [veganwolf](http://www.veganwolf.com/animal_ingredients.htm)
 
 **and we added also a few ourselves...**
 
@@ -108,6 +108,10 @@ isVegan.isVeganIngredientList([
 
 Checkout: [RunKit "is-vegan-playground" for more examples](https://runkit.com/hmontazeri/is-vegan-playground)
 
+## Free API
+
+[https://is-vegan.netlify.com/](https://is-vegan.netlify.com/)
+
 ## Test
 
 ```bash
@@ -120,9 +124,9 @@ yarn test
 
 ## TODO
 
-* extend list
+- extend list
 
 ## Authors
 
-* Hamed Montazeri
-* Meike Rittmeier
+- Hamed Montazeri
+- Meike Rittmeier
