@@ -24,7 +24,6 @@
   "jest": {
     "testURL": "http://localhost/",
     "verbose": true,
-    "testURL": "http://localhost/",
     "automock": false,
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
