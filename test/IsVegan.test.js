@@ -12,6 +12,10 @@ test('should NOT be vegan ingredient', () => {
   expect(isVegan.isVeganIngredient('milk')).toBe(false);
 });
 
+test('should NOT be vegan ingredient if all its words are in non-vegan list', () => {
+  expect(isVegan.isVeganIngredient('stilton cheese')).toBe(false);
+});
+
 test('should NOT be vegan ingredient list', () => {
   expect(isVegan.isVeganIngredientList(['aspic', 'albumin'])).toBe(false);
 });

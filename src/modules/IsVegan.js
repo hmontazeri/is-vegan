@@ -4,7 +4,8 @@ import nonVeganList from '../util/nonvegan.json';
  * This functions takes the given ingredient
  * and checks it against the non-vegan list of ingredients
  * @param {string} ingredientToCheck - the ingredient to check
- * @return <code>true</code> if ingredient is not in nonVeganList
+ * @return <code>false</code> if ingredient is in nonVeganList or if all ingredient words are in nonVeganList. 
+ * Otherwise <code>true</code>
  */
 export function isVeganIngredient (ingredientToCheck) {
   // true if empty
@@ -12,7 +13,13 @@ export function isVeganIngredient (ingredientToCheck) {
 
   const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase();
 
-  return !nonVeganList.includes(formattedIngredientToCheck);
+  const nonVeganListIncludesIngredient = nonVeganList.includes(formattedIngredientToCheck);
+  if (nonVeganListIncludesIngredient === true) return false;
+
+  const ingredientWords = formattedIngredientToCheck.split(' ');
+  if (ingredientWords.length > 1 && ingredientWords.every(word => !isVeganIngredient(word))) return false;
+
+  return true;
 }
 
 /**
