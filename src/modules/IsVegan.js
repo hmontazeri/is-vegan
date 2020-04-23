@@ -4,8 +4,7 @@ import nonVeganList from '../util/nonvegan.json';
  * This functions takes the given ingredient
  * and checks it against the non-vegan list of ingredients
  * @param {string} ingredientToCheck - the ingredient to check
- * @return <code>false</code> if ingredient is in nonVeganList or if all ingredient words are in nonVeganList. 
- * Otherwise <code>true</code>
+ * @return <code>false</code> if ingredient is in nonVeganList or if all ingredient words are in nonVeganList. Otherwise <code>true</code>
  */
 export function isVeganIngredient (ingredientToCheck) {
   // true if empty
