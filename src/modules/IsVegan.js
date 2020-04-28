@@ -1,4 +1,4 @@
-import nonVeganList from '../i18n/en/nonvegan.json';
+import { getNonVeganList } from './IngredientsListProvider';
 
 /**
  * This functions takes the given ingredient
@@ -12,7 +12,7 @@ export function isVeganIngredient (ingredientToCheck) {
 
   const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase();
 
-  const nonVeganListIncludesIngredient = nonVeganList.includes(formattedIngredientToCheck);
+  const nonVeganListIncludesIngredient = getNonVeganList().includes(formattedIngredientToCheck);
   if (nonVeganListIncludesIngredient === true) return false;
 
   const ingredientWords = formattedIngredientToCheck.split(' ');

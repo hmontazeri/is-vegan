@@ -1,4 +1,4 @@
-import flaggedList from '../i18n/en/canbevegan.json';
+import { getCanBeVeganList } from './IngredientsListProvider';
 
 /**
  * This functions takes the given ingredient
@@ -12,7 +12,7 @@ export function isFlaggedIngredient (ingredientToCheck) {
 
   const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase();
 
-  return flaggedList.includes(formattedIngredientToCheck);
+  return getCanBeVeganList().includes(formattedIngredientToCheck);
 }
 
 /**
