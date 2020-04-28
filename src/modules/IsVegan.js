@@ -1,4 +1,4 @@
-import nonVeganList from '../util/nonvegan.json';
+import nonVeganList from '../i18n/en/nonvegan.json';
 
 /**
  * This functions takes the given ingredient

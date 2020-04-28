@@ -1,4 +1,4 @@
-import flaggedList from '../util/canbevegan.json';
+import flaggedList from '../i18n/en/canbevegan.json';
 
 /**
  * This functions takes the given ingredient
