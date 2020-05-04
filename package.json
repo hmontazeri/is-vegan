@@ -60,6 +60,7 @@
     "jest": "22.1.4",
     "nodemon": "1.14.11",
     "uglifyjs-webpack-plugin": "1.1.8",
+    "validate.js": "^0.13.1",
     "webpack": "3.10.0",
     "webpack-node-externals": "1.6.0"
   }
