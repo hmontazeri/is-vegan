@@ -1,31 +1,41 @@
 import * as ingredientsListProvider from '../src/modules/IngredientsListProvider';
 
+const englishLanguageCode = 'en';
+
 afterEach(() => {
-  ingredientsListProvider.setSelectedLanguage('en');
+  ingredientsListProvider.setIngredientsLanguage(englishLanguageCode);
 });
 
-test('should return \'en\' as the selected language by default', () => {
-  expect(ingredientsListProvider.getSelectedLanguage()).toEqual('en');
+test('should return English as the ingredients language selected by default', () => {
+  expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
 });
 
-test('should allow selecting a supported language', () => {
-  ingredientsListProvider.setSelectedLanguage('it');
-  expect(ingredientsListProvider.getSelectedLanguage()).toEqual('it');
+test('should allow setting a supported ingredients language', () => {
+  const italianLanguageCode = 'it';
+  ingredientsListProvider.setIngredientsLanguage(italianLanguageCode);
+  expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(italianLanguageCode);
 });
 
-test('should NOT allow selecting a null language', () => {
-  ingredientsListProvider.setSelectedLanguage(null);
-  expect(ingredientsListProvider.getSelectedLanguage()).toEqual('en');
+test('should NOT allow setting a null ingredients language', () => {
+  expect(() => {
+    ingredientsListProvider.setIngredientsLanguage(null);
+  }).toThrow(new Error('Language can\'t be blank'));
+  expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
 });
 
-test('should NOT allow selecting an undefined language', () => {
-  ingredientsListProvider.setSelectedLanguage(undefined);
-  expect(ingredientsListProvider.getSelectedLanguage()).toEqual('en');
+test('should NOT allow setting an undefined ingredients language', () => {
+  expect(() => {
+    ingredientsListProvider.setIngredientsLanguage(undefined);
+  }).toThrow(new Error('Language can\'t be blank'));
+  expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
 });
 
-test('should NOT allow selecting an unsupported language', () => {
-  ingredientsListProvider.setSelectedLanguage('fr');
-  expect(ingredientsListProvider.getSelectedLanguage()).toEqual('en');
+test('should NOT allow setting an unsupported ingredients language', () => {
+  const frenchLanguageCode = 'fr';
+  expect(() => {
+    ingredientsListProvider.setIngredientsLanguage(frenchLanguageCode);
+  }).toThrow(new Error(`Language '${frenchLanguageCode}' is currently not supported`));
+  expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
 });
 
 test('should return list of can-be-vegan ingredients', () => {

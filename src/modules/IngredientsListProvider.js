@@ -4,22 +4,23 @@ import enNonVeganList from '../i18n/en/nonvegan.json';
 var validate = require('validate.js');
 
 const supportedLanguages = ['en', 'it'];
-var selectedLanguage = supportedLanguages[0];
+var ingredientsLanguage = supportedLanguages[0];
 
 /**
- * This functions returns the selected language
- * @return {string} The ISO 639-1 code of the selected language
+ * This functions returns the currently selected ingredients language
+ * @return {string} The two-letter code (ISO 639-1) of the currently selected ingredients language
  */
-export function getSelectedLanguage () {
-  return selectedLanguage;
+export function getIngredientsLanguage () {
+  return ingredientsLanguage;
 }
 
 /**
- * This functions sets the selected language
- * @param {string} value - The ISO 639-1 code of the language to select
+ * This functions sets the ingredients language
+ * @param {string} value - The two-letter code (ISO 639-1) of the ingredients language to set
  * @return {undefined}
- */
-export function setSelectedLanguage (value) {
+ * @throws Will throw an error if validation fails
+*/
+export function setIngredientsLanguage (value) {
   const validationConstraints = {
     language: {
       presence: true,
@@ -30,13 +31,13 @@ export function setSelectedLanguage (value) {
     }
   };
 
-  const validationResult = validate({language: value}, validationConstraints);
-  if (validationResult !== undefined) {
-    console.log(validationResult);
-    return;
+  const validationErrors = validate({language: value}, validationConstraints);
+  if (validationErrors !== undefined) {
+    const errorMessage = Object.values(validationErrors)[0];
+    throw new Error(errorMessage);
   }
 
-  selectedLanguage = value;
+  ingredientsLanguage = value;
 }
 
 /**
