@@ -38,10 +38,20 @@ test('should NOT allow setting an unsupported ingredients language', () => {
   expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
 });
 
-test('should return list of can-be-vegan ingredients', () => {
+test('should return list of English can-be-vegan ingredients', () => {
   expect(ingredientsListProvider.getCanBeVeganList()).toEqual(expect.arrayContaining(['biotin', 'vitamin b12']));
 });
 
-test('should return list of non-vegan ingredients', () => {
+test('should return list of English non-vegan ingredients', () => {
   expect(ingredientsListProvider.getNonVeganList()).toEqual(expect.arrayContaining(['cheese', 'egg', 'meat']));
+});
+
+test('should return list of Italian can-be-vegan ingredients', () => {
+  ingredientsListProvider.setIngredientsLanguage('it');
+  expect(ingredientsListProvider.getCanBeVeganList()).toEqual(expect.arrayContaining(['biotina', 'vitamina b12']));
+});
+
+test('should return list of Italian non-vegan ingredients', () => {
+  ingredientsListProvider.setIngredientsLanguage('it');
+  expect(ingredientsListProvider.getNonVeganList()).toEqual(expect.arrayContaining(['formaggio', 'uova', 'carne']));
 });
