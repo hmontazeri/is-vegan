@@ -1,9 +1,8 @@
-import enCanBeVeganList from '../i18n/en/canbevegan.json';
-import enNonVeganList from '../i18n/en/nonvegan.json';
+import { getSupportedLanguages, getIngredientsLists } from './IngredientsListsLoader';
 
 var validate = require('validate.js');
 
-const supportedLanguages = ['en', 'it'];
+const supportedLanguages = getSupportedLanguages();
 var ingredientsLanguage = supportedLanguages[0];
 
 /**
@@ -45,7 +44,7 @@ export function setIngredientsLanguage (value) {
  * @return The can-be-vegan list of ingredients
  */
 export function getCanBeVeganList () {
-  return enCanBeVeganList;
+  return getIngredientsLists()[ingredientsLanguage][0];
 }
 
 /**
@@ -53,5 +52,5 @@ export function getCanBeVeganList () {
  * @return The non-vegan list of ingredients
  */
 export function getNonVeganList () {
-  return enNonVeganList;
+  return getIngredientsLists()[ingredientsLanguage][1];
 }
