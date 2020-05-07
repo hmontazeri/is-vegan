@@ -1,8 +1,8 @@
-import { getSupportedLanguages, getIngredientsLists } from './IngredientsListsLoader';
+import { getLanguages, getIngredientsLists } from './IngredientsListsLoader';
 
 var validate = require('validate.js');
 
-const supportedLanguages = getSupportedLanguages();
+const supportedLanguages = getLanguages();
 var ingredientsLanguage = supportedLanguages[0];
 
 /**
