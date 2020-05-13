@@ -78,6 +78,15 @@ isVegan.checkIngredients(['soy', 'cacao butter', 'pork', 'beef', 'glycine']);
 //   flagged: ['glycine']
 // }
 
+// example for list of ingredients in Italian language
+isVegan.setIngredientsLanguage('it'); // 'it' is the two-letter ISO 639-1 code for the Italian language
+isVegan.checkIngredients(['manzo', 'maiale', 'glicina', 'biotina', 'soia', 'aglio']);
+// returns
+// {
+//   nonvegan: ['manzo', 'maiale'],
+//   flagged: ['glicina', 'biotina']
+// }
+
 // or
 
 import { checkIngredients } from 'is-vegan';
