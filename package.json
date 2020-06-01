@@ -38,9 +38,7 @@
   "repository": {
     "url": "git@github.com:hmontazeri/is-vegan.git"
   },
-  "dependencies": {
-    "validate.js": "^0.13.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",

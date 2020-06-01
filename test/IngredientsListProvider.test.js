@@ -19,14 +19,28 @@ test('should allow setting a supported ingredients language', () => {
 test('should NOT allow setting a null ingredients language', () => {
   expect(() => {
     ingredientsListProvider.setIngredientsLanguage(null);
-  }).toThrow(new Error('Language can\'t be blank'));
+  }).toThrow(new Error('Language must be a two-letter code (ISO 639-1)'));
   expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
 });
 
 test('should NOT allow setting an undefined ingredients language', () => {
   expect(() => {
     ingredientsListProvider.setIngredientsLanguage(undefined);
-  }).toThrow(new Error('Language can\'t be blank'));
+  }).toThrow(new Error('Language must be a two-letter code (ISO 639-1)'));
+  expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
+});
+
+test('should NOT allow setting an empty ingredients language', () => {
+  expect(() => {
+    ingredientsListProvider.setIngredientsLanguage('');
+  }).toThrow(new Error('Language must be a two-letter code (ISO 639-1)'));
+  expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
+});
+
+test('should NOT allow setting an ingredients language longer than two characters', () => {
+  expect(() => {
+    ingredientsListProvider.setIngredientsLanguage('italian');
+  }).toThrow(new Error('Language must be a two-letter code (ISO 639-1)'));
   expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
 });
 

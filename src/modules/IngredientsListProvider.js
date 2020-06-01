@@ -1,7 +1,5 @@
 import { getLanguages, getIngredientsLists } from './IngredientsListsLoader';
 
-var validate = require('validate.js');
-
 const supportedLanguages = getLanguages();
 var ingredientsLanguage = supportedLanguages[0];
 
@@ -20,21 +18,9 @@ export function getIngredientsLanguage () {
  * @throws Will throw an error if validation fails
 */
 export function setIngredientsLanguage (value) {
-  const validationConstraints = {
-    language: {
-      presence: true,
-      inclusion: {
-        within: supportedLanguages,
-        message: '^Language \'%{value}\' is currently not supported'
-      }
-    }
-  };
+  const validationError = validateIngredientsLanguage(value);
 
-  const validationErrors = validate({language: value}, validationConstraints);
-  if (validationErrors !== undefined) {
-    const errorMessage = Object.values(validationErrors)[0];
-    throw new Error(errorMessage);
-  }
+  if (validationError !== null) throw new Error(validationError);
 
   ingredientsLanguage = value;
 }
@@ -53,4 +39,17 @@ export function getCanBeVeganList () {
  */
 export function getNonVeganList () {
   return getIngredientsLists()[ingredientsLanguage][1];
+}
+
+/**
+ * This functions validates the ingredients language
+ * @param {string} value - The ingredients language to validate
+ * @return {string} A human readable validation error if the ingredients language is not valid. Otherwise <code>null</code>
+*/
+function validateIngredientsLanguage (value) {
+  if (typeof value !== 'string' || value === null || value.trim().length === 0 || value.length !== 2) return 'Language must be a two-letter code (ISO 639-1)';
+
+  if (!supportedLanguages.includes(value)) return `Language '${value}' is currently not supported`;
+
+  return null;
 }
