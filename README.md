@@ -80,7 +80,14 @@ isVegan.checkIngredients(['soy', 'cacao butter', 'pork', 'beef', 'glycine']);
 
 // example for list of ingredients in Italian language
 isVegan.setIngredientsLanguage('it'); // 'it' is the two-letter ISO 639-1 code for the Italian language
-isVegan.checkIngredients(['manzo', 'maiale', 'glicina', 'biotina', 'soia', 'aglio']);
+isVegan.checkIngredients([
+  'manzo',
+  'maiale',
+  'glicina',
+  'biotina',
+  'soia',
+  'aglio',
+]);
 // returns
 // {
 //   nonvegan: ['manzo', 'maiale'],
@@ -115,7 +122,7 @@ isVegan.isVeganIngredientList([
   'COCOA BUTTER',
   'ALKALIZED REDUCED FAT COCOA POWDER',
   'SOY LECITHIN EMULSIFIER',
-  'GROUND VANILLA'
+  'GROUND VANILLA',
 ]); // returns true
 ```
 
@@ -130,6 +137,10 @@ Checkout: [RunKit "is-vegan-playground" for more examples](https://runkit.com/hm
 ```bash
 yarn test
 ```
+
+## Thanks for translating the lists to italian
+
+[gianantoniopini](https://github.com/gianantoniopini)
 
 ## Alfred Workflow by Kyle Brumm (kjbrum)
 
