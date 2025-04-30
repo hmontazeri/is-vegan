@@ -1,0 +1,34 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+
+jobs:
+  test:
+    parameters:
+      node-version:
+        type: string
+    docker:
+      - image: node:<< parameters.node-version >>
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Install codecov
+          command: npm install -g codecov
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Run tests and upload coverage
+          command: codecov
+
+workflows:
+  version: 2
+  test-matrix:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              node-version: ['18', '20', '21']

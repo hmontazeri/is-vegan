@@ -1,0 +1,253 @@
+# Orb 'circleci/node@5.0.2' resolved to 'circleci/node@5.0.2'
+version: 2
+jobs:
+  test-18:
+    docker:
+    - image: node:18
+    steps:
+    - checkout
+    - run:
+        command: |-
+          # Fail if package.json does not exist in working directory
+
+          if [ ! -f "package.json" ]; then
+              echo
+              echo "---"
+              echo "Unable to find your package.json file. Did you forget to set the app-dir parameter?"
+              echo "---"
+              echo
+              echo "Current directory: $(pwd)"
+              echo
+              echo
+              echo "List directory: "
+              echo
+              ls
+              exit 1
+          fi
+        name: Checking for package.json
+        working_directory: .
+    - run:
+        command: |-
+          # Link corresponding lock file to a temporary file used by cache commands
+          if [ -f "package-lock.json" ]; then
+              echo "Found package-lock.json file, assuming lockfile"
+              cp package-lock.json /tmp/node-project-lockfile
+          elif [ -f "npm-shrinkwrap.json" ]; then
+              echo "Found npm-shrinkwrap.json file, assuming lockfile"
+              cp npm-shrinkwrap.json /tmp/node-project-lockfile
+          elif [ -f "yarn.lock" ]; then
+              echo "Found yarn.lock file, assuming lockfile"
+              cp yarn.lock /tmp/node-project-lockfile
+          fi
+          cp package.json /tmp/node-project-package.json
+        name: Determine lockfile
+        working_directory: .
+    - restore_cache:
+        keys:
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-lockfile" }}
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-package.json" }}
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-
+    - run:
+        command: |-
+          # Configure npm cache path if provided
+          if [[ -n "$PARAM_CACHE_PATH" ]]; then
+              npm config set cache "$PARAM_CACHE_PATH"
+          fi
+
+          # Run override ci command if provided, otherwise run default npm install
+          if [[ -n "$PARAM_OVERRIDE_COMMAND" ]]; then
+              echo "Running override package installation command:"
+              eval "$PARAM_OVERRIDE_COMMAND"
+          else
+              npm ci
+          fi
+        environment:
+          PARAM_CACHE_PATH: ''
+          PARAM_OVERRIDE_COMMAND: ''
+        name: Installing NPM packages
+        working_directory: .
+    - save_cache:
+        key: node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-lockfile" }}
+        paths:
+        - ~/.npm
+    - run:
+        command: rm -f /tmp/node-project-lockfile /tmp/node-project-package.json /tmp/yarn-zero-lockfile
+        name: Remove temporary links
+    - run:
+        name: Install codecov
+        command: npm install -g codecov
+    - run:
+        name: Build
+        command: npm run build
+    - run:
+        name: Run tests and upload coverage
+        command: codecov
+  test-20:
+    docker:
+    - image: node:20
+    steps:
+    - checkout
+    - run:
+        command: |-
+          # Fail if package.json does not exist in working directory
+
+          if [ ! -f "package.json" ]; then
+              echo
+              echo "---"
+              echo "Unable to find your package.json file. Did you forget to set the app-dir parameter?"
+              echo "---"
+              echo
+              echo "Current directory: $(pwd)"
+              echo
+              echo
+              echo "List directory: "
+              echo
+              ls
+              exit 1
+          fi
+        name: Checking for package.json
+        working_directory: .
+    - run:
+        command: |-
+          # Link corresponding lock file to a temporary file used by cache commands
+          if [ -f "package-lock.json" ]; then
+              echo "Found package-lock.json file, assuming lockfile"
+              cp package-lock.json /tmp/node-project-lockfile
+          elif [ -f "npm-shrinkwrap.json" ]; then
+              echo "Found npm-shrinkwrap.json file, assuming lockfile"
+              cp npm-shrinkwrap.json /tmp/node-project-lockfile
+          elif [ -f "yarn.lock" ]; then
+              echo "Found yarn.lock file, assuming lockfile"
+              cp yarn.lock /tmp/node-project-lockfile
+          fi
+          cp package.json /tmp/node-project-package.json
+        name: Determine lockfile
+        working_directory: .
+    - restore_cache:
+        keys:
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-lockfile" }}
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-package.json" }}
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-
+    - run:
+        command: |-
+          # Configure npm cache path if provided
+          if [[ -n "$PARAM_CACHE_PATH" ]]; then
+              npm config set cache "$PARAM_CACHE_PATH"
+          fi
+
+          # Run override ci command if provided, otherwise run default npm install
+          if [[ -n "$PARAM_OVERRIDE_COMMAND" ]]; then
+              echo "Running override package installation command:"
+              eval "$PARAM_OVERRIDE_COMMAND"
+          else
+              npm ci
+          fi
+        environment:
+          PARAM_CACHE_PATH: ''
+          PARAM_OVERRIDE_COMMAND: ''
+        name: Installing NPM packages
+        working_directory: .
+    - save_cache:
+        key: node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-lockfile" }}
+        paths:
+        - ~/.npm
+    - run:
+        command: rm -f /tmp/node-project-lockfile /tmp/node-project-package.json /tmp/yarn-zero-lockfile
+        name: Remove temporary links
+    - run:
+        name: Install codecov
+        command: npm install -g codecov
+    - run:
+        name: Build
+        command: npm run build
+    - run:
+        name: Run tests and upload coverage
+        command: codecov
+  test-21:
+    docker:
+    - image: node:21
+    steps:
+    - checkout
+    - run:
+        command: |-
+          # Fail if package.json does not exist in working directory
+
+          if [ ! -f "package.json" ]; then
+              echo
+              echo "---"
+              echo "Unable to find your package.json file. Did you forget to set the app-dir parameter?"
+              echo "---"
+              echo
+              echo "Current directory: $(pwd)"
+              echo
+              echo
+              echo "List directory: "
+              echo
+              ls
+              exit 1
+          fi
+        name: Checking for package.json
+        working_directory: .
+    - run:
+        command: |-
+          # Link corresponding lock file to a temporary file used by cache commands
+          if [ -f "package-lock.json" ]; then
+              echo "Found package-lock.json file, assuming lockfile"
+              cp package-lock.json /tmp/node-project-lockfile
+          elif [ -f "npm-shrinkwrap.json" ]; then
+              echo "Found npm-shrinkwrap.json file, assuming lockfile"
+              cp npm-shrinkwrap.json /tmp/node-project-lockfile
+          elif [ -f "yarn.lock" ]; then
+              echo "Found yarn.lock file, assuming lockfile"
+              cp yarn.lock /tmp/node-project-lockfile
+          fi
+          cp package.json /tmp/node-project-package.json
+        name: Determine lockfile
+        working_directory: .
+    - restore_cache:
+        keys:
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-lockfile" }}
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-package.json" }}
+        - node-deps-{{ arch }}-v1-{{ .Branch }}-
+    - run:
+        command: |-
+          # Configure npm cache path if provided
+          if [[ -n "$PARAM_CACHE_PATH" ]]; then
+              npm config set cache "$PARAM_CACHE_PATH"
+          fi
+
+          # Run override ci command if provided, otherwise run default npm install
+          if [[ -n "$PARAM_OVERRIDE_COMMAND" ]]; then
+              echo "Running override package installation command:"
+              eval "$PARAM_OVERRIDE_COMMAND"
+          else
+              npm ci
+          fi
+        environment:
+          PARAM_CACHE_PATH: ''
+          PARAM_OVERRIDE_COMMAND: ''
+        name: Installing NPM packages
+        working_directory: .
+    - save_cache:
+        key: node-deps-{{ arch }}-v1-{{ .Branch }}-{{ checksum "/tmp/node-project-lockfile" }}
+        paths:
+        - ~/.npm
+    - run:
+        command: rm -f /tmp/node-project-lockfile /tmp/node-project-package.json /tmp/yarn-zero-lockfile
+        name: Remove temporary links
+    - run:
+        name: Install codecov
+        command: npm install -g codecov
+    - run:
+        name: Build
+        command: npm run build
+    - run:
+        name: Run tests and upload coverage
+        command: codecov
+workflows:
+  version: 2
+  test-matrix:
+    jobs:
+    - test-18
+    - test-20
+    - test-21
