@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/hmontazeri/is-vegan.svg?branch=master)](https://travis-ci.org/hmontazeri/is-vegan) [![npm version](https://badge.fury.io/js/is-vegan.svg)](https://badge.fury.io/js/is-vegan) [![codecov](https://codecov.io/gh/hmontazeri/is-vegan/branch/master/graph/badge.svg)](https://codecov.io/gh/hmontazeri/is-vegan)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/hmontazeri/is-vegan/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/hmontazeri/is-vegan/tree/master) [![npm version](https://badge.fury.io/js/is-vegan.svg)](https://badge.fury.io/js/is-vegan) [![codecov](https://codecov.io/gh/hmontazeri/is-vegan/branch/master/graph/badge.svg)](https://codecov.io/gh/hmontazeri/is-vegan)
 
 # is-vegan
 
@@ -124,7 +124,6 @@ isVegan.isVeganIngredientList([
 ```
 
 Checkout: [RunKit "is-vegan-playground" for more examples](https://runkit.com/hmontazeri/is-vegan-playground)
-
 
 ## Test
 
