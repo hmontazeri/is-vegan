@@ -4,11 +4,7 @@
 
 Is-Vegan helps you to find out which food ingredients are vegan / non-vegan. It can answer that on 1 ingredient or on a list of ingredients. It uses a 850+ entries list of non-vegan ingredients.
 
-[Wanna buy me a Coffee?](https://ko-fi.com/hmontazeri)
-
 [How to use?](#usage)
-
-[Free API Service?](https://is-vegan.netlify.com/)
 
 ## Why?
 
@@ -128,9 +124,6 @@ isVegan.isVeganIngredientList([
 
 Checkout: [RunKit "is-vegan-playground" for more examples](https://runkit.com/hmontazeri/is-vegan-playground)
 
-## Free API
-
-[https://is-vegan.netlify.com/](https://is-vegan.netlify.com/)
 
 ## Test
 
