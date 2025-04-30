@@ -28,6 +28,7 @@ Websites we parsed:
 - [veganpeace](http://www.veganpeace.com/ingredients/ingredients.htm)
 - [peta](https://www.peta.org/living/food/animal-ingredients-list/)
 - [veganwolf](http://www.veganwolf.com/animal_ingredients.htm)
+- [happycow](https://www.happycow.net/files/ingredients-to-avoid.pdf)
 
 **and we added also a few ourselves...**
 

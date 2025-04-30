@@ -21,7 +21,7 @@ test('should be vegan ingredient if not all its words are in non-vegan list', ()
 });
 
 test('should NOT be vegan ingredient list', () => {
-  expect(isVegan.isVeganIngredientList(['aspic', 'albumin'])).toBe(false);
+  expect(isVegan.isVeganIngredientList(['abalone', 'anchovies'])).toBe(false);
 });
 
 test('should be vegan ingredient list', () => {
@@ -36,6 +36,6 @@ test('should NOT contain non-vegan ingredient list', () => {
 
 test('should contain non-vegan ingredient list', () => {
   expect(
-    isVegan.containsNonVeganIngredients(['aspic', 'albumin', 'soy'])
-  ).toEqual(expect.arrayContaining(['aspic', 'albumin']));
+    isVegan.containsNonVeganIngredients(['abalone', 'anchovies', 'soy'])
+  ).toEqual(expect.arrayContaining(['abalone', 'anchovies']));
 });
