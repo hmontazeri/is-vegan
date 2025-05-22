@@ -131,6 +131,24 @@ Checkout: [RunKit "is-vegan-playground" for more examples](https://runkit.com/hm
 yarn test
 ```
 
+## Updating and translating the lists
+
+The canbevegan and nonvegan English lists are located in the [i18n/en](./src/i18n/en/) directory. The ingredients in these English lists are sorted in alphabetical order.
+
+The lists' translations are located in the corresponding language directory under [i18n](./src/i18n/). The ingredients in these Non-English lists are not sorted in alphabetical order, instead they maintain the order of the English lists.\
+So if, for example, the "biotin" ingredient is positioned at line 16 in the [English canbevegan](./src/i18n/en/canbevegan.json) list, then its corresponding translation "biotina" in the [Italian canbevegan](./src/i18n/it/canbevegan.json) list should also be positioned at line 16.\
+If the "bacon" ingredient is positioned at line 49 in the [Enlgish nonvegan](./src/i18n/en/nonvegan.json) list, then its corresponding translation "pancetta" in the [Italian nonvegan](./src/i18n/it/nonvegan.json) list should also be positioned at line 49.
+
+### Steps to add a new ingredient to the lists
+
+1. Add the ingredient to the canbevegan or nonvegan English list, ensuring that the list alphabetical order is preserved.
+2. Add the translated ingredient to each of the existing Non-English lists at the same line number as the ingredient appears in the corresponding English list.
+
+### Steps to translate the lists to a new language
+
+1. Create a directory with the two-letter code (ISO 639-1) of the new language.
+2. Translate the English lists to the new language and save these to newly created list files under the new language directory. Ensure that the ingredients in each of these new list files appear in the same order as in the corresponding English list.
+
 ## Thanks for translating the lists to italian
 
 [gianantoniopini](https://github.com/gianantoniopini)
