@@ -46,6 +46,16 @@ or
 npm install is-vegan --save
 ```
 
+### Available Languages
+
+The library supports the following languages using ISO 639-1 codes:
+
+- **en** - English (default)
+- **it** - Italian  
+- **es** - Spanish
+- **fr** - French
+- **de** - German
+
 ### example
 
 ```javascript
@@ -89,6 +99,51 @@ isVegan.checkIngredients([
 // {
 //   nonvegan: ['manzo', 'maiale'],
 //   flagged: ['glicina', 'biotina']
+// }
+
+// example for list of ingredients in Spanish language
+isVegan.setIngredientsLanguage('es'); // 'es' is the two-letter ISO 639-1 code for the Spanish language
+isVegan.checkIngredients([
+  'carne de res',
+  'cerdo',
+  'glicina',
+  'soja',
+  'ajo',
+]);
+// returns
+// {
+//   nonvegan: ['carne de res', 'cerdo'],
+//   flagged: ['glicina']
+// }
+
+// example for list of ingredients in French language
+isVegan.setIngredientsLanguage('fr'); // 'fr' is the two-letter ISO 639-1 code for the French language
+isVegan.checkIngredients([
+  'bœuf',
+  'porc',
+  'glycine',
+  'soja',
+  'ail',
+]);
+// returns
+// {
+//   nonvegan: ['bœuf', 'porc'],
+//   flagged: ['glycine']
+// }
+
+// example for list of ingredients in German language
+isVegan.setIngredientsLanguage('de'); // 'de' is the two-letter ISO 639-1 code for the German language
+isVegan.checkIngredients([
+  'rindfleisch',
+  'schwein',
+  'glyzin',
+  'soja',
+  'knoblauch',
+]);
+// returns
+// {
+//   nonvegan: ['rindfleisch', 'schwein'],
+//   flagged: ['glyzin']
 // }
 
 // or

@@ -2,10 +2,19 @@ import enCanBeVeganList from '../i18n/en/canbevegan.json';
 import enNonVeganList from '../i18n/en/nonvegan.json';
 import itCanBeVeganList from '../i18n/it/canbevegan.json';
 import itNonVeganList from '../i18n/it/nonvegan.json';
+import esCanBeVeganList from '../i18n/es/canbevegan.json';
+import esNonVeganList from '../i18n/es/nonvegan.json';
+import frCanBeVeganList from '../i18n/fr/canbevegan.json';
+import frNonVeganList from '../i18n/fr/nonvegan.json';
+import deCanBeVeganList from '../i18n/de/canbevegan.json';
+import deNonVeganList from '../i18n/de/nonvegan.json';
 
 const ingredientsLists = {
   en: [enCanBeVeganList, enNonVeganList],
-  it: [itCanBeVeganList, itNonVeganList]
+  it: [itCanBeVeganList, itNonVeganList],
+  es: [esCanBeVeganList, esNonVeganList],
+  fr: [frCanBeVeganList, frNonVeganList],
+  de: [deCanBeVeganList, deNonVeganList]
 };
 
 /**

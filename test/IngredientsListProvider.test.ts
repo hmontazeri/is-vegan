@@ -45,10 +45,10 @@ test('should NOT allow setting an ingredients language longer than two character
 });
 
 test('should NOT allow setting an unsupported ingredients language', () => {
-  const frenchLanguageCode = 'fr';
+  const unsupportedLanguageCode = 'pt';
   expect(() => {
-    ingredientsListProvider.setIngredientsLanguage(frenchLanguageCode);
-  }).toThrow(new Error(`Language '${frenchLanguageCode}' is currently not supported`));
+    ingredientsListProvider.setIngredientsLanguage(unsupportedLanguageCode);
+  }).toThrow(new Error(`Language '${unsupportedLanguageCode}' is currently not supported`));
   expect(ingredientsListProvider.getIngredientsLanguage()).toEqual(englishLanguageCode);
 });
 
@@ -68,4 +68,34 @@ test('should return list of Italian can-be-vegan ingredients', () => {
 test('should return list of Italian non-vegan ingredients', () => {
   ingredientsListProvider.setIngredientsLanguage('it');
   expect(ingredientsListProvider.getNonVeganList()).toEqual(expect.arrayContaining(['formaggio', 'uova', 'carne']));
+});
+
+test('should return list of Spanish can-be-vegan ingredients', () => {
+  ingredientsListProvider.setIngredientsLanguage('es');
+  expect(ingredientsListProvider.getCanBeVeganList()).toEqual(expect.arrayContaining(['biotina', 'vitamina b12']));
+});
+
+test('should return list of Spanish non-vegan ingredients', () => {
+  ingredientsListProvider.setIngredientsLanguage('es');
+  expect(ingredientsListProvider.getNonVeganList()).toEqual(expect.arrayContaining(['queso', 'huevo', 'carne']));
+});
+
+test('should return list of French can-be-vegan ingredients', () => {
+  ingredientsListProvider.setIngredientsLanguage('fr');
+  expect(ingredientsListProvider.getCanBeVeganList()).toEqual(expect.arrayContaining(['biotine', 'vitamine b12']));
+});
+
+test('should return list of French non-vegan ingredients', () => {
+  ingredientsListProvider.setIngredientsLanguage('fr');
+  expect(ingredientsListProvider.getNonVeganList()).toEqual(expect.arrayContaining(['fromage', 'œuf', 'viande']));
+});
+
+test('should return list of German can-be-vegan ingredients', () => {
+  ingredientsListProvider.setIngredientsLanguage('de');
+  expect(ingredientsListProvider.getCanBeVeganList()).toEqual(expect.arrayContaining(['biotin', 'vitamin b12']));
+});
+
+test('should return list of German non-vegan ingredients', () => {
+  ingredientsListProvider.setIngredientsLanguage('de');
+  expect(ingredientsListProvider.getNonVeganList()).toEqual(expect.arrayContaining(['käse', 'ei', 'fleisch']));
 });
