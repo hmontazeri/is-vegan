@@ -10,16 +10,16 @@ const ingredientsLists = {
 
 /**
  * This functions returns the list of languages
- * @return {string[]} Array of language two-letter codes (ISO 639-1)
+ * @return Array of language two-letter codes (ISO 639-1)
  */
-export function getLanguages () {
+export function getLanguages (): string[] {
   return Object.keys(ingredientsLists);
 }
 
 /**
  * This functions returns the ingredients lists for each language
- * @return {Object.<string, string[][]>} Dictionary of ingredients lists. The dictionary key is the two-letter code (ISO 639-1) of the ingredients language. The dictionary value is an array whose first element is the can-be-vegan list and the second element is the non-vegan list
+ * @return Dictionary of ingredients lists. The dictionary key is the two-letter code (ISO 639-1) of the ingredients language. The dictionary value is an array whose first element is the can-be-vegan list and the second element is the non-vegan list
  */
-export function getIngredientsLists () {
+export function getIngredientsLists (): Record<string, string[][]> {
   return ingredientsLists;
 }

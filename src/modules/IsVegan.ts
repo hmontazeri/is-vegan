@@ -3,10 +3,10 @@ import { getNonVeganList } from './IngredientsListProvider';
 /**
  * This functions takes the given ingredient
  * and checks it against the non-vegan list of ingredients
- * @param {string} ingredientToCheck - the ingredient to check
- * @return <code>false</code> if ingredient is in nonVeganList or if all ingredient words are in nonVeganList. Otherwise <code>true</code>
+ * @param ingredientToCheck - the ingredient to check
+ * @return if ingredient is in nonVeganList or if all ingredient words are in nonVeganList. Otherwise true
  */
-export function isVeganIngredient (ingredientToCheck) {
+export function isVeganIngredient (ingredientToCheck: string): boolean {
   // true if empty
   if (ingredientToCheck.length === 0) return true;
 
@@ -24,20 +24,20 @@ export function isVeganIngredient (ingredientToCheck) {
 /**
  * This functions takes a given list of ingredients
  * and checks them against the non-vegan list of ingredients
- * @param {[string]} ingredientsToCheck - the lit of ingredients to check
- * @return <code>true</code> if ingredients are not in nonVeganList
+ * @param ingredientsToCheck - the lit of ingredients to check
+ * @return if ingredients are not in nonVeganList
  */
-export function isVeganIngredientList (ingredientsToCheck) {
+export function isVeganIngredientList (ingredientsToCheck: string[]): boolean {
   return !ingredientsToCheck.some(ingredient => !isVeganIngredient(ingredient));
 }
 
 /**
  * This functions takes a given list of ingredients
  * and checks them against the non-vegan list of ingredients
- * @param {[string]} ingredientsToCheck - the lit of ingredients to check
+ * @param ingredientsToCheck - the lit of ingredients to check
  * @return Array of ingredients that are non-vegan
  */
-export function containsNonVeganIngredients (ingredientsToCheck) {
+export function containsNonVeganIngredients (ingredientsToCheck: string[]): string[] {
   return ingredientsToCheck.filter(
     ingredient => !isVeganIngredient(ingredient)
   );

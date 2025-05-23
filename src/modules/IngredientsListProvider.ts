@@ -5,19 +5,18 @@ var ingredientsLanguage = supportedLanguages[0];
 
 /**
  * This functions returns the currently selected ingredients language
- * @return {string} The two-letter code (ISO 639-1) of the currently selected ingredients language
+ * @return The two-letter code (ISO 639-1) of the currently selected ingredients language
  */
-export function getIngredientsLanguage () {
+export function getIngredientsLanguage (): string {
   return ingredientsLanguage;
 }
 
 /**
  * This functions sets the ingredients language
- * @param {string} value - The two-letter code (ISO 639-1) of the ingredients language to set
- * @return {undefined}
+ * @param value - The two-letter code (ISO 639-1) of the ingredients language to set
  * @throws Will throw an error if validation fails
 */
-export function setIngredientsLanguage (value) {
+export function setIngredientsLanguage (value: string): void {
   const validationError = validateIngredientsLanguage(value);
 
   if (validationError !== null) throw new Error(validationError);
@@ -29,7 +28,7 @@ export function setIngredientsLanguage (value) {
  * This functions returns the can-be-vegan list of ingredients
  * @return The can-be-vegan list of ingredients
  */
-export function getCanBeVeganList () {
+export function getCanBeVeganList (): string[] {
   return getIngredientsLists()[ingredientsLanguage][0];
 }
 
@@ -37,16 +36,16 @@ export function getCanBeVeganList () {
  * This functions returns the non-vegan list of ingredients
  * @return The non-vegan list of ingredients
  */
-export function getNonVeganList () {
+export function getNonVeganList (): string[] {
   return getIngredientsLists()[ingredientsLanguage][1];
 }
 
 /**
  * This functions validates the ingredients language
- * @param {string} value - The ingredients language to validate
- * @return {string} A human readable validation error if the ingredients language is not valid. Otherwise <code>null</code>
+ * @param value - The ingredients language to validate
+ * @return A human readable validation error if the ingredients language is not valid. Otherwise null
 */
-function validateIngredientsLanguage (value) {
+function validateIngredientsLanguage (value: string): string | null {
   if (typeof value !== 'string' || value === null || value.trim().length === 0 || value.length !== 2) return 'Language must be a two-letter code (ISO 639-1)';
 
   if (!supportedLanguages.includes(value)) return `Language '${value}' is currently not supported`;
