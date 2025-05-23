@@ -5,7 +5,7 @@ test('should return the list of languages', () => {
 });
 
 test('should return the English ingredients list', () => {
-  const ingredientsList = ingredientsListsLoader.getIngredientsLists()['en'];
+  const ingredientsList = ingredientsListsLoader.getIngredientsLists().en;
   expect(ingredientsList).toBeTruthy();
   expect(ingredientsList).toHaveLength(2);
   expect(ingredientsList[0]).toEqual(expect.arrayContaining(['biotin', 'vitamin b12']));
@@ -13,7 +13,7 @@ test('should return the English ingredients list', () => {
 });
 
 test('should return the Italian ingredients list', () => {
-  const ingredientsList = ingredientsListsLoader.getIngredientsLists()['it'];
+  const ingredientsList = ingredientsListsLoader.getIngredientsLists().it;
   expect(ingredientsList).toBeTruthy();
   expect(ingredientsList).toHaveLength(2);
   expect(ingredientsList[0]).toEqual(expect.arrayContaining(['biotina', 'vitamina b12']));

@@ -4,8 +4,8 @@ import itCanBeVeganList from '../i18n/it/canbevegan.json';
 import itNonVeganList from '../i18n/it/nonvegan.json';
 
 const ingredientsLists = {
-  'en': [enCanBeVeganList, enNonVeganList],
-  'it': [itCanBeVeganList, itNonVeganList]
+  en: [enCanBeVeganList, enNonVeganList],
+  it: [itCanBeVeganList, itNonVeganList]
 };
 
 /**

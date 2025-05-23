@@ -15,14 +15,16 @@
     "init": "mkdir dist",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean && npm run init && npm run lint && npm run test",
-    "build": "tsup src/index.ts --format umd --dts --sourcemap --legacy-output",
+    "build": "tsup index.ts --format cjs,esm --dts --sourcemap",
     "prepublish": "npm run build",
     "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "jest"
   },
   "jest": {
     "preset": "ts-jest",
-    "testURL": "http://localhost/",
+    "testEnvironmentOptions": {
+      "url": "http://localhost/"
+    },
     "verbose": true,
     "automock": false,
     "coverageDirectory": "./coverage/",
@@ -43,6 +45,10 @@
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
     "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
     "jest": "^29.7.0",
     "nodemon": "3.1.10",
     "ts-jest": "^29.3.4",

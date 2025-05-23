@@ -1,10 +1,17 @@
 {
   "extends": "standard",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "semi": [2, "always"],
-    "no-invalid-this": 2
+    "no-invalid-this": 2,
+    "dot-notation": "error"
   },
   "env": {
     "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   }
 }

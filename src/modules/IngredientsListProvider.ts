@@ -1,7 +1,7 @@
 import { getLanguages, getIngredientsLists } from './IngredientsListsLoader';
 
 const supportedLanguages = getLanguages();
-var ingredientsLanguage = supportedLanguages[0];
+let ingredientsLanguage = supportedLanguages[0];
 
 /**
  * This functions returns the currently selected ingredients language
@@ -15,13 +15,13 @@ export function getIngredientsLanguage (): string {
  * This functions sets the ingredients language
  * @param value - The two-letter code (ISO 639-1) of the ingredients language to set
  * @throws Will throw an error if validation fails
-*/
-export function setIngredientsLanguage (value: string): void {
+ */
+export function setIngredientsLanguage (value: string | null | undefined): void {
   const validationError = validateIngredientsLanguage(value);
 
   if (validationError !== null) throw new Error(validationError);
 
-  ingredientsLanguage = value;
+  ingredientsLanguage = value as string;
 }
 
 /**
@@ -44,11 +44,16 @@ export function getNonVeganList (): string[] {
  * This functions validates the ingredients language
  * @param value - The ingredients language to validate
  * @return A human readable validation error if the ingredients language is not valid. Otherwise null
-*/
-function validateIngredientsLanguage (value: string): string | null {
-  if (typeof value !== 'string' || value === null || value.trim().length === 0 || value.length !== 2) return 'Language must be a two-letter code (ISO 639-1)';
+ */
+function validateIngredientsLanguage (value: any): string | null {
+  if (
+    typeof value !== 'string' ||
+    value === null ||
+    value.trim().length === 0 ||
+    value.length !== 2
+  ) { return 'Language must be a two-letter code (ISO 639-1)'; }
 
-  if (!supportedLanguages.includes(value)) return `Language '${value}' is currently not supported`;
+  if (!supportedLanguages.includes(value)) { return `Language '${value}' is currently not supported`; }
 
   return null;
 }

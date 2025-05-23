@@ -8,7 +8,8 @@
     "skipLibCheck": true,
     "outDir": "./dist",
     "declaration": true,
-    "rootDir": "./src"
+    "rootDir": "./",
+    "resolveJsonModule": true
   },
   "include": ["src/**/*", "index.ts"],
   "exclude": ["node_modules", "dist", "test"]
