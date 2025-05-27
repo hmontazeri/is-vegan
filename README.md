@@ -192,7 +192,7 @@ The canbevegan and nonvegan English lists are located in the [i18n/en](./src/i18
 
 The lists' translations are located in the corresponding language directory under [i18n](./src/i18n/). The ingredients in these Non-English lists are not sorted in alphabetical order, instead they maintain the order of the English lists.\
 So if, for example, the "biotin" ingredient is positioned at line 16 in the [English canbevegan](./src/i18n/en/canbevegan.json) list, then its corresponding translation "biotina" in the [Italian canbevegan](./src/i18n/it/canbevegan.json) list should also be positioned at line 16.\
-If the "bacon" ingredient is positioned at line 49 in the [Enlgish nonvegan](./src/i18n/en/nonvegan.json) list, then its corresponding translation "pancetta" in the [Italian nonvegan](./src/i18n/it/nonvegan.json) list should also be positioned at line 49.
+If the "bacon" ingredient is positioned at line 49 in the [English nonvegan](./src/i18n/en/nonvegan.json) list, then its corresponding translation "pancetta" in the [Italian nonvegan](./src/i18n/it/nonvegan.json) list should also be positioned at line 49.
 
 ### Steps to add a new ingredient to the lists
 
